@@ -7,7 +7,19 @@ STD1_0="UP"
 STD2_0="UP"
 STD3_0="UP"
 ################
-os.system("nmcli c down FASOPONLY_4G")
+ONWIFI=os.system("nmcli c up FASOPONLY_4G")
+OFFWIFI=os.system("nmcli c down FASOPONLY_4G")
+ONLAN=os.system("nmcli c up 'Wired connection 1'")
+OFFLAN=os.system("nmcli c down 'Wired connection 1'")
+CEKCON=OS.SYSTEM("nmcli c s")
+################
+penerima=(str(6285840292122),str(6281272670507))
+penerima1=penerima[0]
+payload={}
+headers = {}
+################
+OFFWIFI
+ONLAN
 ################
 D1=ping("192.168.18.1", unit="ms")
 D1=ping("192.168.18.30", unit="ms")
@@ -41,15 +53,18 @@ VAL3=datatostatus(D3)[2]
 print("kirimdata ke database")
 #################
 if (STD1!=STD1_0) or (STD2!=STD2_0) or (STD3!=STD3_0):
-    os.system("nmcli c down 'Wired connection 1'")
-    os.system("nmcli c up FASOPONLY_4G")
+    OFFLAN
+    ONWIFI
     print("kirim wa")
     print(str(STD1)+str(RSP1)+str(VAL1))
     print(str(STD2)+str(RSP2)+str(VAL2))
     print(str(STD3)+str(RSP3)+str(VAL3))
-    os.system("nmcli c down FASOPONLY_4G")
-    os.system("nmcli c up 'Wired connection 1'")
-    os.system("nmcli c s")
+    # pesan="Test Pesan WA Api dengan Python"
+    # url = "http://gatewayku.com/send-message?api_key=atsbF8sLFWLludhbeykWcec8NJvRDb&sender=6285840292122&number=penerima1&message="+pesan;
+    # response = requests.request("POST", url, headers=headers, data=payload)
+    OFFWIFI
+    ONLAN
+    CEKCON
 else:
     print("tidak kirim wa")
 
