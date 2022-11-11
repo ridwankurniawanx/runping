@@ -18,8 +18,8 @@ os.system("nmcli c down FASOPONLY_4G")
 os.system("nmcli c up 'Wired connection 1'")
 ################
 D1=ping("192.168.18.1", unit="ms")
-D1=ping("192.168.18.30", unit="ms")
-D1=ping("192.168.18.122", unit="ms")
+D2=ping("192.168.18.30", unit="ms")
+D3=ping("192.168.18.122", unit="ms")
 ################
 def datatostatus(data):
     if data==False:
