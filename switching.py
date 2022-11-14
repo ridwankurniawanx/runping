@@ -25,11 +25,11 @@ def datatostatus(data):
     if data==False:
         status="FALSE"
         response="False"
-        value=556
+        value=556.0
     elif data==None:
         status="DOWN"
         response="Timeout"
-        value=555
+        value=555.0
     else:
         status="UP"
         response=round(data,1)
