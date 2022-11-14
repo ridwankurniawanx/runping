@@ -9,10 +9,7 @@ STD3_0="UP"
 ################
 
 ################
-penerima=(str(6285840292122),str(6281272670507))
-penerima1=penerima[0]
-payload={}
-headers = {}
+
 ################
 os.system("nmcli c down FASOPONLY_4G")
 os.system("nmcli c up 'Wired connection 1'")
