@@ -3,6 +3,9 @@ import os
 import time
 import requests
 ################
+os.system("nmcli c down 'Wired connection 2'")
+os.system("nmcli c down 'Wired connection 1'")
+################
 STD1_0="UP"
 STD2_0="UP"
 STD3_0="UP"
