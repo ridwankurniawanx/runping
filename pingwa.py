@@ -10,7 +10,7 @@ STD1_0="UP"
 STD2_0="UP"
 STD3_0="UP"
 ################
-ethip="192.168.137.194"
+ethip="192.168.137.99"
 ################
 for i in range(1000):
 ################
@@ -18,7 +18,7 @@ for i in range(1000):
     os.system("nmcli device connect eth0")
     ################
     D1=ping("192.168.18.1", unit="ms", src_addr=ethip, timeout=1)
-    D2=ping("192.168.137.194", unit="ms", src_addr=ethip, timeout=1)
+    D2=ping("192.168.137.99", unit="ms", src_addr=ethip, timeout=1)
     D3=ping("192.168.18.30", unit="ms", src_addr=ethip, timeout=1)
     ################
     def datatostatus(data):
