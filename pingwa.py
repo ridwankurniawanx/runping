@@ -55,7 +55,7 @@ for i in range(1000):
     with InfluxDBClient(url='http://localhost:8086', token=f'{username}:{password}', org='-') as client:
         with client.write_api() as write_api:
             print('*** Write Points ***')
-            point = Point("cpuz").field("D1", VAL1).field("D2",VAL2).field("D3",VAL3)
+            point = Point("pingsim").field("D1", VAL1).field("D2",VAL2).field("D3",VAL3)
             print(point.to_line_protocol())
             write_api.write(bucket=bucket, record=point)
     #################
