@@ -3,8 +3,8 @@ import os
 import time
 import requests
 ################
-os.system("nmcli c down 'Wired connection 2'")
-os.system("nmcli c down 'Wired connection 1'")
+os.system("nmcli device disconnect usb0")
+os.system("nmcli device disconnect eth0")
 ################
 STD1_0="UP"
 STD2_0="UP"
@@ -14,8 +14,8 @@ ethip="192.168.137.194"
 ################
 for i in range(1000):
 ################
-    os.system("nmcli c down 'Wired connection 2'")
-    os.system("nmcli c up 'Wired connection 1'")
+    os.system("nmcli device disconnect usb0")
+    os.system("nmcli device connect eth0")
     ################
     D1=ping("192.168.18.1", unit="ms", src_addr=ethip, timeout=1)
     D2=ping("192.168.137.194", unit="ms", src_addr=ethip, timeout=1)
@@ -60,8 +60,8 @@ for i in range(1000):
             write_api.write(bucket=bucket, record=point)
     #################
     if (STD1!=STD1_0) or (STD2!=STD2_0) or (STD3!=STD3_0):
-        os.system("nmcli c down 'Wired connection 1'")
-        os.system("nmcli c up 'Wired connection 2'")
+        os.system("nmcli device disconnect eth0")
+        os.system("nmcli device connect usb0")
         print("kirim wa")
         print(str(STD1)+str(RSP1)+str(VAL1))
         print(str(STD2)+str(RSP2)+str(VAL2))
@@ -71,8 +71,8 @@ for i in range(1000):
         payload={'id_device' : '652', 'api-key' : '8803a77e3041cb5ca064790976c4dfbc6a3c1899', 'no_hp'  : '6285840292122', 'pesan'  : pesan}
         headers = {}
         response = requests.request("POST", url, headers=headers, data=payload)
-        os.system("nmcli c down 'Wired connection 2'")
-        os.system("nmcli c up 'Wired connection 1'")
+        os.system("nmcli device disconnect usb0")
+        os.system("nmcli device connect eth0")
         os.system("nmcli c s")
     else:
         print("tidak kirim wa")
