@@ -69,7 +69,7 @@ for i in range(1000):
         print(str(STD3)+str(RSP3)+str(VAL3))
         xran=random.randint(0,1000)
         url = "https://api.watsap.id/send-message";
-        pesan= "_*GIXYZ ALERT!!!*_\n============\n```Router  "+STD1+"\nLaptop  "+STD2+"\nHP      "+STD3+"\n"+xran```"
+        pesan= "_*GIXYZ ALERT!!!*_\n============\n```Router  "+STD1+"\nLaptop  "+STD2+"\nHP      "+STD3+"\n"+xran+"\n"```"
         payload={'id_device' : '652', 'api-key' : '8803a77e3041cb5ca064790976c4dfbc6a3c1899', 'no_hp'  : '6285840292122', 'pesan'  : pesan}
         headers = {}
         response = requests.request("POST", url, headers=headers, data=payload)
