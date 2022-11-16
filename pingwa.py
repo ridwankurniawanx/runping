@@ -14,7 +14,7 @@ ethip="192.168.137.99"
 ################
 for i in range(1000):
 ################
-    os.system("nmcli device disconnect usb0")
+   
     os.system("nmcli device connect eth0")
     ################
     D1=ping("192.168.18.1", unit="ms", src_addr=ethip, timeout=1)
@@ -72,7 +72,6 @@ for i in range(1000):
         headers = {}
         response = requests.request("POST", url, headers=headers, data=payload)
         os.system("nmcli device disconnect usb0")
-        os.system("nmcli device connect eth0")
         os.system("nmcli c s")
     else:
         print("tidak kirim wa")
