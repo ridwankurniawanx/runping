@@ -77,4 +77,5 @@ for i in range(1000):
     STD1_0=STD1
     STD2_0=STD2
     STD3_0=STD3
+    time.sleep(60)
 
