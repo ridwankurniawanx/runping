@@ -1,4 +1,5 @@
 from ping3 import ping
+import random
 import os
 import time
 import requests
@@ -66,8 +67,9 @@ for i in range(1000):
         print(str(STD1)+str(RSP1)+str(VAL1))
         print(str(STD2)+str(RSP2)+str(VAL2))
         print(str(STD3)+str(RSP3)+str(VAL3))
+        xran=random.randint(0,1000)
         url = "https://api.watsap.id/send-message";
-        pesan= "_*GIXYZ ALERT!!!*_\n============\n```Router  "+STD1+"\nLaptop  "+STD2+"\nHP      "+STD3+"\nXX"```"
+        pesan= "_*GIXYZ ALERT!!!*_\n============\n```Router  "+STD1+"\nLaptop  "+STD2+"\nHP      "+STD3+"\n"+xran```"
         payload={'id_device' : '652', 'api-key' : '8803a77e3041cb5ca064790976c4dfbc6a3c1899', 'no_hp'  : '6285840292122', 'pesan'  : pesan}
         headers = {}
         response = requests.request("POST", url, headers=headers, data=payload)
